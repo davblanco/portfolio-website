@@ -1,0 +1,241 @@
+:root {
+  --primary-color: #357b70;
+  --secondary-color: #e0b354;
+  --dark-grey: #2b2b2b;
+  --font-weight: 700px;
+  --span: rgb(85, 74, 243);
+}
+body {
+  font-family: "merriweather";
+  font-weight: 400;
+  font-size: 16px;
+  /*Set the size to 16px */
+  line-height: 1.6;
+  /*Sets the line-height to 1.6*/
+}
+body {
+  background-color: honeydew;
+}
+span {
+  color: var(--span);
+}
+h1 {
+  font-size: 30px;
+  font-weight: var(--font-weight);
+}
+h2 {
+  font-size: 24px;
+  font-weight: var(--font-weight);
+}
+h3 {
+  font-size: 18px;
+  font-weight: var(--font-weight);
+}
+a {
+  color: var(--primary-color);
+}
+a:visited {
+  /* visited link*/
+  color: #05676e;
+}
+a:hover,
+a:focus {
+  /* no underlining when hovering over a link*/
+  text-decoration: none;
+}
+a:active {
+  /*selected link */
+  color: #489c79;
+}
+.button {
+  /* overwrites browser defaults and resets the border*/
+  border: none;
+  /*takes the font from the outer container*/
+  display: inline-block;
+  font-family: inherit;
+  /*styles the background color, font color, and text decoration (underline)
+  of the button*/
+  background-color: var(--primary-color);
+  color: white;
+  text-decoration: none;
+  /* adds spacing tp the button*/
+  padding: 10px;
+  border-radius: 3px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0, 3);
+}
+.button_secondary {
+  background-color: var(--secondary-color);
+  color: #2b2b2b;
+}
+.button:hover,
+.button:focus {
+  /*lets the mouse appear as a hand when hovering over the button*/
+  cursor: pointer;
+  /* reduces the opacite of the button to 80%*/
+  opacity: 0.8;
+}
+
+.navigation-list_item--active {
+  text-decoration: none;
+}
+.profile_portrait {
+  float: left;
+  width: 250;
+  margin-right: 40px;
+  border-radius: 50%;
+}
+.profile {
+  max-width: 700px;
+  margin: 0 auto;
+}
+.page-header {
+  display: flex;
+  width: 100%;
+  padding: 20px;
+}
+.page-header_item {
+  flex: 0 1 200px;
+}
+.page-header_item:last-child {
+  flex-grow: 1;
+  text-align: right;
+}
+.navigation-list {
+  list-style-type: none;
+}
+.navigation-list li {
+  display: inline-block;
+  margin-left: 15px;
+}
+.page-footer {
+  clear: both;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.grid_item {
+  display: inline-block;
+  width: 33%;
+}
+@supports (display: grid) {
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    grid-gap: 20px;
+  }
+  .grid_item {
+    background-color: lightgray;
+    width: auto;
+    min-height: auto;
+    margin: 0;
+  }
+  .grid__item:last-child {
+    grid-column-start: 3;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+  }
+  .grid__item:last-child {
+    grid-column: 3 / 3;
+    grid-row: 1 / 3;
+  }
+}
+
+@media all and (max-width: 500px) {
+  .grid {
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+  }
+  .grid_item:last-child {
+    grid-column: auto / auto;
+    grid-row: auto / auto;
+  }
+  h1 {
+    font-size: 22px;
+  }
+}
+@media all and (max-width: 500px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media all and (min-width: 500px) and (max-width: 750px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media all and (max-width: 750px) {
+  .grid {
+    grid-gap: 10px;
+  }
+  .grid_item:last-child {
+    grid-column: auto / auto;
+    grid-row: auto / auto;
+  }
+  h1 {
+    font-size: 22px;
+  }
+}
+.button,
+button {
+  /* overwrites browser defaults and resets the border */
+  border: none;
+  display: inline-block;
+  /* takes the font from the outer container */
+  font-family: inherit;
+  /* styles the button */
+  background-color: #357b70;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 3px;
+  /* width of the border, type, color */
+  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+  transition: 0.2s opacity;
+}
+button:hover,
+button:focus,
+.button:hover,
+.button:focus {
+  /* lets the mouse appear as a hand when hovering over the button */
+  cursor: pointer;
+  /* reduces the opacity of the button to 80% */
+  opacity: 0.8;
+}
+@keyframes color-change {
+  0% {
+    fill: #edc655;
+  }
+  50% {
+    fill: #fcffad;
+  }
+  100% {
+    fill: #f76414;
+  }
+}
+.sun {
+  animation: 4s color-change infinite alternate linear;
+}
+@keyframes cloud-move {
+  from {
+    transform: translate(0, 50px);
+  }
+  to {
+    transform: translate(200px, 50px);
+  }
+}
+.cloud-front {
+  animation: 30s cloud-move infinite alternate linear;
+}
+@keyframes cloud-move-reverse {
+  from {
+    transform: translate(446px, 48px);
+  }
+  to {
+    transform: translate(100px, 48px);
+  }
+}
+.cloud-back {
+  animation: 34s cloud-move-reverse infinite alternate linear;
+}
