@@ -2,7 +2,7 @@
   --primary-color: #357b70;
   --secondary-color: #e0b354;
   --dark-grey: #2b2b2b;
-  --font-weight: 700px;
+  --font-weight: 700;
   --span: rgb(85, 74, 243);
 }
 body {
@@ -14,7 +14,7 @@ body {
   /*Sets the line-height to 1.6*/
 }
 body {
-  background-color: honeydew;
+  background-color: white;
 }
 span {
   color: var(--span);
@@ -61,7 +61,7 @@ a:active {
   /* adds spacing tp the button*/
   padding: 10px;
   border-radius: 3px;
-  border-bottom: 2px solid rgba(0, 0, 0, 0, 3);
+  border-bottom: 2px solid rgba(0, 0, 0, 3);
 }
 .button_secondary {
   background-color: var(--secondary-color);
@@ -80,7 +80,7 @@ a:active {
 }
 .profile_portrait {
   float: left;
-  width: 250;
+  width: 250px;
   margin-right: 40px;
   border-radius: 50%;
 }
